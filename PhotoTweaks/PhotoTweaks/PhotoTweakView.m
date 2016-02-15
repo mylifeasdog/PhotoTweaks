@@ -570,6 +570,24 @@ typedef NS_ENUM(NSInteger, CropCornerType) {
     self.manualZoomed = YES;
 }
 
+#pragma mark - Setter
+
+- (void)setResetButtonTitleColor:(UIColor *)resetButtonTitleColor
+{
+    _resetButtonTitleColor = resetButtonTitleColor;
+    
+    [_resetBtn setTitleColor:(!self.resetButtonTitleColor ?
+                              [UIColor resetButtonColor] : self.resetButtonTitleColor) forState:UIControlStateNormal];
+}
+
+- (void)setResetButtonHighlightTitleColor:(UIColor *)resetButtonHighlightTitleColor
+{
+    _resetButtonHighlightTitleColor = resetButtonHighlightTitleColor;
+    
+    [_resetBtn setTitleColor:(!self.resetButtonHighlightTitleColor ?
+                              [UIColor resetButtonHighlightedColor] : self.resetButtonHighlightTitleColor) forState:UIControlStateNormal];
+}
+
 #pragma mark - Crop View Delegate
 
 - (void)cropMoved:(CropView *)cropView
