@@ -34,6 +34,10 @@
 @property (assign, nonatomic) CGPoint photoContentOffset;
 @property (strong, nonatomic) CropView *cropView;
 
+@property (nonatomic, strong) UIColor *resetButtonTitleColor;
+@property (nonatomic, strong) UIColor *resetButtonHighlightTitleColor;
+
+
 @property (nonatomic, strong, readonly) UISlider *slider;
 @property (nonatomic, strong, readonly) UIButton *resetBtn;
 

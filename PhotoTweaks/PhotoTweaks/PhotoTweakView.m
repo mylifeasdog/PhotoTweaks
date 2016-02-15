@@ -533,8 +533,12 @@ typedef NS_ENUM(NSInteger, CropCornerType) {
         _resetBtn.frame = CGRectMake(0, 0, 60, 20);
         _resetBtn.center = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) - 95);
         _resetBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-        [_resetBtn setTitleColor:[UIColor resetButtonColor] forState:UIControlStateNormal];
-        [_resetBtn setTitleColor:[UIColor resetButtonHighlightedColor] forState:UIControlStateHighlighted];
+        UIColor *resetButtonTitleColor = !self.resetButtonTitleColor ?
+        [UIColor resetButtonColor] : self.resetButtonTitleColor;
+        [_resetBtn setTitleColor:resetButtonTitleColor forState:UIControlStateNormal];
+        UIColor *resetButtonHighlightTitleColor = !self.resetButtonHighlightTitleColor ?
+        [UIColor resetButtonHighlightedColor] : self.resetButtonHighlightTitleColor;
+        [_resetBtn setTitleColor:resetButtonHighlightTitleColor forState:UIControlStateHighlighted];
         [_resetBtn setTitle:NSLocalizedStringFromTable(@"RESET", @"PhotoTweaks", nil) forState:UIControlStateNormal];
         [_resetBtn addTarget:self action:@selector(resetBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_resetBtn];

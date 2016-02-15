@@ -48,6 +48,8 @@
 {
     self.photoView = [[PhotoTweakView alloc] initWithFrame:self.view.bounds image:self.image];
     self.photoView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.photoView.resetButtonTitleColor = self.resetButtonTitleColor;
+    self.photoView.resetButtonHighlightTitleColor = self.resetButtonHighlightTitleColor;
     [self.view addSubview:self.photoView];
     
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
